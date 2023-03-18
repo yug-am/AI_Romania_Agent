@@ -21,6 +21,7 @@ def pick_next_place_index(current_index, visited_places_index, dist_matrix, stli
     place_found =  min(dict_temp, key=dict_temp.get)
     print("Huristic with "+str(stline_dist[place_found]))
     return place_found
+
 def greedy_best_first_search(dist_matrix, source, destination,places_index_map ,st_line_distance):
     #print(dist_matrix)
     print("Source is "+source)

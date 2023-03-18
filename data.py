@@ -51,6 +51,8 @@ places_dist={
 }
 st_line_dist={}
 places.sort()
+#for test
+#places.sort(reverse=True)
 places_index_map={}
 index_places_map={}
 def data_prep():

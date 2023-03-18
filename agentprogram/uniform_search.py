@@ -10,6 +10,7 @@ def pick_next_place_index(current_index, visited_places_index, dist_matrix):
             print("Found "+str(index))
             possible_places.append(index)
         index+=1
+    sorted(range(len(possible_places)), key=possible_places.__getitem__)
     return possible_places
 def uniform_search(dist_matrix, source, destination, places_index_map):
     #print(dist_matrix)

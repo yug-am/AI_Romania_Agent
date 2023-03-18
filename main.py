@@ -4,8 +4,8 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 from data import data_prep
-#from  agentprogram.dfs import depth_first_search
-#from agentprogram.greedybfs import greedy_best_first_search
+from  agentprogram.dfs import depth_first_search
+from agentprogram.greedybfs import greedy_best_first_search
 from agentprogram.astar import a_star_search
 from agentprogram.uniform_search import uniform_search
 
@@ -21,9 +21,11 @@ if __name__ == '__main__':
     print(places_index_map)
     source = "Arad"
     destination = "Bucharest"
+    solution = []
+    #solution = greedy_best_first_search(dist_matrix, source, destination, places_index_map,st_line_dist)
     #solution = depth_first_search(dist_matrix, source, destination, places_index_map)
-    #solution = a_star_search(dist_matrix, source, destination,places_index_map, st_line_dist,)
-    solution = uniform_search(dist_matrix, source, destination, places_index_map)
+    solution = a_star_search(dist_matrix, source, destination,places_index_map, st_line_dist,)
+    #solution = uniform_search(dist_matrix, source, destination, places_index_map)
     for place_index in solution:
         print(index_places_map[place_index])
  # See PyCharm help at https://www.jetbrains.com/help/pycharm/
