@@ -13,15 +13,16 @@ def pick_next_place_index(current_index, visited_places_index, dist_matrix, stli
     if(len(index_reachable)==0):
         return -1
     dict_temp = {}
-    for k,v in stline_dist.items():
-        if k in index_reachable:
-            dict_temp[k]=v
+    for place_index,distance in stline_dist.items():
+        if place_index in index_reachable:
+            #admissible hueristic
+            dict_temp[place_index]=distance+curr_dist_arr[place_index]
     print("Dict here")
     print(dict_temp)
     place_found =  min(dict_temp, key=dict_temp.get)
     print("Huristic with "+str(stline_dist[place_found]))
     return place_found
-def greedy_best_first_search(dist_matrix, source, destination,places_index_map ,st_line_distance):
+def a_star_search(dist_matrix, source, destination,places_index_map ,st_line_distance):
     #print(dist_matrix)
     print("Source is "+source)
     print("Destination is " + destination)

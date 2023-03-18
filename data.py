@@ -13,8 +13,8 @@ St_line_dist_bucharest={
     'Sibiu':253,
     'Rimnicu Vilcea':193,
     'Craiova':160,
-    'Fagaras':178,
-    'Pitesti':98,
+    'Fagaras':176,
+    'Pitesti':100,
     'Giurgiu':77,
     'Bucharest':0,
     'Urziceni':80,
@@ -49,6 +49,7 @@ places_dist={
     "Vaslui_Iasi":92,
     "Iasi_Neamt": 87,
 }
+st_line_dist={}
 places.sort()
 places_index_map={}
 index_places_map={}
@@ -69,10 +70,12 @@ def data_prep():
     places_short = [place[:3]for place in places  ]
     print("    ",end="")
     print(places_short)
+    for location, dist in St_line_dist_bucharest.items():
+        st_line_dist[places_index_map[location]]=dist
     for i, dist_vect in enumerate(dist_matrix):
         #print(index_places_map[i] ,end=" ")
         dist_vect_temp = [str(dst)+(" ") for dst in dist_vect]
         #print(dist_vect_temp)
     #print("Edge count is {}".format(len(places_dist)))
-    return [places_index_map, index_places_map ,dist_matrix]
+    return [places_index_map, index_places_map ,dist_matrix, st_line_dist]
     #print(places_map)
