@@ -7,6 +7,7 @@ from data import data_prep
 #from  agentprogram.dfs import depth_first_search
 #from agentprogram.greedybfs import greedy_best_first_search
 from agentprogram.astar import a_star_search
+from agentprogram.uniform_search import uniform_search
 
 def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
@@ -21,7 +22,8 @@ if __name__ == '__main__':
     source = "Arad"
     destination = "Bucharest"
     #solution = depth_first_search(dist_matrix, source, destination, places_index_map)
-    solution = a_star_search(dist_matrix, source, destination,places_index_map, st_line_dist,)
+    #solution = a_star_search(dist_matrix, source, destination,places_index_map, st_line_dist,)
+    solution = uniform_search(dist_matrix, source, destination, places_index_map)
     for place_index in solution:
         print(index_places_map[place_index])
  # See PyCharm help at https://www.jetbrains.com/help/pycharm/

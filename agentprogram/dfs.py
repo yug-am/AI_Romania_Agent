@@ -1,6 +1,3 @@
-from queue import LifoQueue
-def stack_empty_check(stack):
-    return len(stack) == 0
 def pick_next_place_index(current_index, visited_places_index, dist_matrix):
     #print("Pick next index call")
     curr_dist_arr = dist_matrix[current_index]
