@@ -48,9 +48,9 @@ def data_prep():
     print("    ",end="")
     print(places_short)
     for i, dist_vect in enumerate(dist_matrix):
-        print(index_places_map[i] ,end=" ")
+        #print(index_places_map[i] ,end=" ")
         dist_vect_temp = [str(dst)+(" ") for dst in dist_vect]
-        print(dist_vect_temp)
-    print("Edge count is {}".format(len(places_dist)))
-
+        #print(dist_vect_temp)
+    #print("Edge count is {}".format(len(places_dist)))
+    return [places_index_map, index_places_map ,dist_matrix]
     #print(places_map)

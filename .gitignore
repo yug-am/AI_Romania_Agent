@@ -4,6 +4,7 @@
 data/
 #Model data
 models/
+__pycache__/
 # Compiled source #
 ###################
 *.com
